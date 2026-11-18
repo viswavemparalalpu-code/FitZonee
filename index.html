@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitZone | Gym Management</title>
+<style>
+:root{--pink:#ef3963;--pink-dark:#d92d56;--pink-soft:#fff0f4;--ink:#24242a;--muted:#777780;--line:#ececf0;--bg:#f7f7f9;--green:#2f8b77;--shadow:0 8px 28px rgba(30,25,35,.07)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+button,input,select{font:inherit}button{cursor:pointer;border:0}
+.app{min-height:100vh;display:flex}.sidebar{width:245px;background:#fff;border-right:1px solid var(--line);padding:25px 17px;position:fixed;inset:0 auto 0 0;display:flex;flex-direction:column;z-index:5}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;margin:0 8px 34px}.brand-mark{width:34px;height:34px;border-radius:11px;background:var(--pink);color:white;display:grid;place-items:center;font-weight:900}
+.nav{display:grid;gap:7px}.nav button{background:transparent;text-align:left;color:#666672;padding:12px 13px;border-radius:10px;font-size:14px;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:var(--pink-soft);color:var(--pink-dark);font-weight:700}.nav .ico{width:19px;text-align:center;font-size:17px}.side-bottom{margin-top:auto}.side-note{background:#fff6f8;border:1px solid #ffe0e8;border-radius:13px;padding:14px;font-size:12px;color:#8b6570;line-height:1.5}
+.main{margin-left:245px;width:calc(100% - 245px);padding:28px 34px 40px;max-width:1600px}.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:27px}.eyebrow{color:var(--pink);font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.page-title{font-size:27px;font-weight:800;margin:5px 0 0}.top-actions{display:flex;align-items:center;gap:12px}.date-pill,.admin-pill{background:white;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-size:12px;color:#656570}.admin-dot{display:inline-block;width:8px;height:8px;background:#42b68b;border-radius:50%;margin-right:7px}
+.btn{background:var(--pink);color:white;padding:11px 16px;border-radius:9px;font-weight:700;font-size:13px;box-shadow:0 5px 12px rgba(239,57,99,.15)}.btn:hover{background:var(--pink-dark)}.btn.secondary{background:white;color:var(--ink);border:1px solid var(--line);box-shadow:none}.btn.small{padding:8px 12px;font-size:12px}
+.grid{display:grid;gap:17px}.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:19px;box-shadow:var(--shadow)}.stat-label{font-size:12px;color:var(--muted);margin-bottom:13px}.stat-value{font-size:30px;font-weight:800;letter-spacing:-1px}.stat-foot{font-size:11px;color:var(--green);margin-top:7px}.stat-icon{float:right;width:35px;height:35px;border-radius:11px;background:var(--pink-soft);display:grid;place-items:center;color:var(--pink);font-size:17px}
+.quick{display:flex;gap:10px;margin:20px 0}.content-grid{grid-template-columns:1.55fr 1fr;align-items:start}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.section-head h2{font-size:16px;margin:0}.muted{color:var(--muted);font-size:12px}.chart{height:210px;display:flex;align-items:end;gap:13px;padding:16px 5px 4px;border-bottom:1px solid var(--line)}.bar-wrap{flex:1;text-align:center;height:100%;display:flex;flex-direction:column;justify-content:end;gap:8px}.bar{background:linear-gradient(180deg,#ff7292,var(--pink));border-radius:7px 7px 2px 2px;min-height:12px}.bar-label{font-size:10px;color:var(--muted)}
+.activity{display:grid;gap:14px}.activity-item{display:flex;gap:11px;align-items:center}.avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#ffe7ee;color:#c82f55;font-size:12px;font-weight:800}.activity-item strong{display:block;font-size:12px}.activity-item small{color:var(--muted);font-size:11px}
+.table-card{margin-top:18px}.table{width:100%;border-collapse:collapse;font-size:13px}.table th{text-align:left;color:var(--muted);font-size:11px;font-weight:700;padding:12px 9px;border-bottom:1px solid var(--line)}.table td{padding:14px 9px;border-bottom:1px solid #f1f1f3}.table tr:last-child td{border-bottom:0}.tag{padding:5px 9px;border-radius:99px;font-size:10px;font-weight:700;background:#eaf8f2;color:#25815f}.tag.pending{background:#fff4df;color:#a56b12}.tag.inactive{background:#f1f1f3;color:#777}
+.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}.panel h2{margin:0 0 6px;font-size:17px}.panel p{color:var(--muted);font-size:13px;line-height:1.6}.page-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.empty{padding:38px;text-align:center;color:var(--muted);background:#fff;border:1px dashed #ddd;border-radius:14px}
+.modal-backdrop{position:fixed;inset:0;background:rgba(25,20,25,.38);display:none;align-items:center;justify-content:center;padding:20px;z-index:20}.modal-backdrop.show{display:flex}.modal{width:min(430px,100%);background:#fff;border-radius:17px;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.2)}.modal h2{margin:0 0 17px}.field{display:grid;gap:6px;margin:13px 0}.field label{font-size:12px;font-weight:700;color:#555}.field input,.field select{padding:11px 12px;border:1px solid #dddde3;border-radius:9px;outline:none}.field input:focus,.field select:focus{border-color:var(--pink)}.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}
+.mobile-menu{display:none;background:white;border:1px solid var(--line);border-radius:9px;padding:8px 11px}
+.notfound{min-height:72vh;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.notfound h1{font-size:38px;line-height:1.05;margin:12px 0}.quest{background:white;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:var(--shadow);max-width:440px}.quest-icon{width:40px;height:40px;background:var(--pink-soft);color:var(--pink);display:grid;place-items:center;border-radius:12px}.progress{height:7px;background:#f0f0f2;border-radius:9px;overflow:hidden;margin:12px 0 20px}.progress span{display:block;height:100%;width:0;background:var(--pink);transition:.25s}.steps{display:grid;gap:10px;margin:17px 0}.step{padding:11px;border:1px solid var(--line);border-radius:10px;font-size:13px;display:flex;justify-content:space-between;align-items:center}.step.done{background:#f0faf6;border-color:#cceadd;color:#27785e}.hidden{display:none!important}
+.toast{position:fixed;right:22px;bottom:22px;background:#25252b;color:white;padding:13px 17px;border-radius:10px;font-size:13px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s;z-index:30}.toast.show{opacity:1;transform:translateY(0)}
+@media(max-width:1000px){.stats{grid-template-columns:repeat(2,1fr)}.content-grid{grid-template-columns:1fr}.main{padding:24px}.page-grid{grid-template-columns:1fr}}
+@media(max-width:700px){.sidebar{transform:translateX(-100%);transition:.25s}.sidebar.open{transform:translateX(0)}.main{margin:0;width:100%;padding:18px 15px 30px}.mobile-menu{display:block}.topbar{gap:10px}.topbar-left{display:flex;gap:10px;align-items:center}.page-title{font-size:22px}.date-pill{display:none}.stats{gap:10px}.card{padding:14px}.stat-value{font-size:25px}.quick{flex-wrap:wrap}.notfound{grid-template-columns:1fr;padding:25px 0}.notfound h1{font-size:32px}.table-card{overflow-x:auto}.table{min-width:550px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><span class="brand-mark">F</span> FitZone</div>
+  <nav class="nav" id="nav">
+    <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
+    <button data-page="members"><span class="ico">♙</span>Members</button>
+    <button data-page="attendance"><span class="ico">✓</span>Attendance</button>
+    <button data-page="trainers"><span class="ico">♧</span>Trainers</button>
+    <button data-page="payments"><span class="ico">▤</span>Payments</button>
+    <button data-page="reports"><span class="ico">▥</span>Reports</button>
+    <button data-page="notfound"><span class="ico">↗</span>Page not found</button>
+  </nav>
+  <div class="side-bottom"><div class="side-note"><strong>Stay consistent.</strong><br>Small steps make a stronger you. Keep moving with FitZone.</div></div>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <div class="topbar-left"><button class="mobile-menu" id="menuBtn">☰</button><div><div class="eyebrow">FITNESS MANAGEMENT</div><div class="page-title" id="pageTitle">Dashboard</div></div></div>
+    <div class="top-actions"><span class="date-pill" id="today"></span><span class="admin-pill"><span class="admin-dot"></span>Admin</span></div>
+  </header>
+  <section id="page-dashboard">
+    <div class="grid stats">
+      <div class="card"><span class="stat-icon">♙</span><div class="stat-label">Total members</div><div class="stat-value" id="totalMembers">6</div><div class="stat-foot">Registered members</div></div>
+      <div class="card"><span class="stat-icon">♥</span><div class="stat-label">Active memberships</div><div class="stat-value" id="activeMembers">4</div><div class="stat-foot">Currently active</div></div>
+      <div class="card"><span class="stat-icon">✓</span><div class="stat-label">Today's attendance</div><div class="stat-value" id="todayAttendance">4</div><div class="stat-foot">Check-ins recorded</div></div>
+      <div class="card"><span class="stat-icon">♧</span><div class="stat-label">Trainers</div><div class="stat-value" id="trainerCount">3</div><div class="stat-foot">Available trainers</div></div>
+    </div>
+    <div class="quick"><button class="btn" id="addMemberBtn">＋ Add member</button><button class="btn" id="markAttendanceBtn">✓ Mark attendance</button><button class="btn secondary" id="viewReportsBtn">View reports</button></div>
+    <div class="grid content-grid">
+      <div class="card"><div class="section-head"><div><h2>Attendance, last 7 days</h2><span class="muted">Weekly check-in overview</span></div><span class="tag">This week</span></div><div class="chart" id="chart"></div></div>
+      <div class="card"><div class="section-head"><h2>Recent activity</h2><span class="muted">Latest updates</span></div><div class="activity" id="activity"></div></div>
+    </div>
+    <div class="card table-card"><div class="section-head"><h2>Recent members</h2><button class="btn secondary small" data-goto="members">View all</button></div><div id="recentTable"></div></div>
+  </section>
+  <section id="page-members" class="hidden">
+    <div class="section-head"><div><h2>Members</h2><span class="muted">Manage gym member records</span></div><button class="btn" id="addMemberBtn2">＋ Add member</button></div>
+    <div class="card"><div id="membersTable"></div></div>
+  </section>
+  <section id="page-attendance" class="hidden">
+    <div class="section-head"><div><h2>Attendance</h2><span class="muted">Record and review member check-ins</span></div><button class="btn" id="markAttendanceBtn2">＋ Mark attendance</button></div>
+    <div class="page-grid"><div class="panel"><h2>Today's attendance</h2><p>Use the button to record a check-in for a member.</p><div class="stat-value" id="attendanceCountPage">4</div><span class="muted">Check-ins today</span></div><div class="panel"><h2>Attendance tip</h2><p>Mark attendance when a member arrives. The dashboard updates automatically during this session.</p></div></div>
+    <div class="card table-card"><div class="section-head"><h2>Attendance log</h2><span class="muted">Recent check-ins</span></div><div id="attendanceTable"></div></div>
+  </section>
+  <section id="page-trainers" class="hidden">
+    <div class="section-head"><div><h2>Trainers</h2><span class="muted">Meet the FitZone training team</span></div></div>
+    <div class="page-grid" id="trainerCards"></div>
+  </section>
+  <section id="page-payments" class="hidden">
+    <div class="section-head"><div><h2>Payments</h2><span class="tag pending">Demo mode</span></div></div>
+    <div class="panel"><h2>Payment information</h2><p>Payments are simulated for this website demonstration. No real money is processed or collected.</p><div class="stat-value">$78</div><span class="muted">Sample revenue this month</span></div>
+    <div class="card table-card"><h2>Sample payment records</h2><div id="paymentsTable"></div></div>
+  </section>
+  <section id="page-reports" class="hidden">
+    <div class="section-head"><div><h2>Reports</h2><span class="muted">A snapshot of gym performance</span></div><button class="btn secondary" id="printReport">Print report</button></div>
+    <div class="grid stats"><div class="card"><div class="stat-label">Total members</div><div class="stat-value" id="reportMembers">6</div></div><div class="card"><div class="stat-label">Active memberships</div><div class="stat-value">4</div></div><div class="card"><div class="stat-label">Attendance today</div><div class="stat-value" id="reportAttendance">4</div></div><div class="card"><div class="stat-label">Monthly revenue</div><div class="stat-value">$78</div></div></div>
+    <div class="panel" style="margin-top:18px"><h2>Report summary</h2><p>FitZone's sample dashboard tracks member registrations, active memberships, daily attendance, trainer count and simulated monthly revenue. Use this page to review the current demonstration data.</p></div>
+  </section>
+  <section id="page-notfound" class="hidden">
+    <div class="notfound">
+      <div><div class="eyebrow">PAGE NOT FOUND</div><h1>Looks like you<br>took a wrong turn.</h1><p class="muted" style="font-size:15px;max-width:370px;line-height:1.6">This page isn't here, but you can take a quick FitZone reset before heading back.</p><button class="btn" data-goto="dashboard">Back to FitZone</button></div>
+      <div class="quest"><div class="quest-icon">✳</div><div class="eyebrow" style="margin-top:17px">THE 30-SECOND RESET</div><h2 style="margin:5px 0">A tiny wellness quest</h2><p>Complete three gentle steps to earn a mini-break. Keep every movement comfortable, and skip anything that doesn't feel right.</p><div class="section-head"><strong style="font-size:12px">Quest progress</strong><span class="muted" id="questCount">0 of 3</span></div><div class="progress"><span id="questProgress"></span></div><div class="steps" id="questSteps"></div><button class="btn" id="startQuest">Start the quest</button> <button class="btn secondary" data-goto="dashboard">Skip and go home</button><p class="muted" style="font-size:10px">Move gently. Stop if anything feels uncomfortable.</p></div>
+    </div>
+  </section>
+</main>
+</div>
+<div class="modal-backdrop" id="modalBackdrop"><div class="modal"><h2 id="modalTitle">Add member</h2><form id="memberForm"><div class="field"><label for="memberName">Member name</label><input id="memberName" required placeholder="Enter full name"></div><div class="field"><label for="memberPlan">Membership plan</label><select id="memberPlan"><option>Monthly</option><option>Quarterly</option><option>Annual</option></select></div><div class="field"><label for="memberStatus">Status</label><select id="memberStatus"><option>Active</option><option>Pending</option><option>Inactive</option></select></div><div class="modal-actions"><button type="button" class="btn secondary" id="cancelModal">Cancel</button><button class="btn" type="submit">Save member</button></div></form></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const members = [
+ {name:"Aarav Sharma",plan:"Annual",status:"Active",joined:"12 Nov 2025"},
+ {name:"Meera Kapoor",plan:"Monthly",status:"Active",joined:"18 Nov 2025"},
+ {name:"Rohan Verma",plan:"Quarterly",status:"Active",joined:"21 Nov 2025"},
+ {name:"Ananya Singh",plan:"Monthly",status:"Pending",joined:"25 Nov 2025"},
+ {name:"Kabir Patel",plan:"Annual",status:"Active",joined:"02 Dec 2025"},
+ {name:"Ishita Gupta",plan:"Monthly",status:"Inactive",joined:"04 Dec 2025"}
+];
+const trainers=[["Riya Malhotra","Yoga & Flexibility","RM"],["Arjun Mehta","Strength Training","AM"],["Sana Khan","Cardio & Fitness","SK"]];
+let attendance=[{name:"Aarav Sharma",time:"08:15 AM"},{name:"Meera Kapoor",time:"08:42 AM"},{name:"Rohan Verma",time:"09:10 AM"},{name:"Kabir Patel",time:"09:35 AM"}];
+const payments=[["Aarav Sharma","Annual membership","$30","Paid"],["Meera Kapoor","Monthly membership","$16","Paid"],["Rohan Verma","Quarterly membership","$22","Paid"],["Ananya Singh","Monthly membership","$10","Pending"]];
+const $=id=>document.getElementById(id);
+function toast(msg){const t=$("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2400)}
+function table(rows,heads){return `<table class="table"><thead><tr>${heads.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((v,i)=>`<td>${v}</td>`).join("")}</tr>`).join("")}</tbody></table>`}
+function statusTag(s){return `<span class="tag ${s.toLowerCase()}">${s}</span>`}
+function render(){
+ $("totalMembers").textContent=members.length;$("activeMembers").textContent=members.filter(m=>m.status==="Active").length;$("trainerCount").textContent=trainers.length;
+ $("todayAttendance").textContent=attendance.length;$("attendanceCountPage").textContent=attendance.length;$("reportMembers").textContent=members.length;$("reportAttendance").textContent=attendance.length;
+ const memberRows=members.map(m=>[`<strong>${m.name}</strong>`,m.plan,statusTag(m.status),m.joined]);
+ $("membersTable").innerHTML=table(memberRows,["Member","Plan","Status","Joined"]);
+ $("recentTable").innerHTML=table(memberRows.slice(0,4),["Member","Plan","Status","Joined"]);
+ $("attendanceTable").innerHTML=table(attendance.map(a=>[a.name,a.time,statusTag("Active")]),["Member","Check-in time","Status"]);
+ $("paymentsTable").innerHTML=table(payments.map(p=>[p[0],p[1],p[2],statusTag(p[3])]),["Member","Description","Amount","Status"]);
+ $("trainerCards").innerHTML=trainers.map(t=>`<div class="panel"><div class="avatar" style="width:48px;height:48px;font-size:15px">${t[2]}</div><h2 style="margin-top:15px">${t[0]}</h2><p>${t[1]}</p><span class="tag">Available</span></div>`).join("");
+ $("activity").innerHTML=[...attendance.slice(-3).reverse().map(a=>`<div class="activity-item"><div class="avatar">${a.name.split(" ").map(x=>x[0]).slice(0,2).join("")}</div><div><strong>${a.name} checked in</strong><small>Today · ${a.time}</small></div></div>`),`<div class="activity-item"><div class="avatar">F</div><div><strong>FitZone dashboard updated</strong><small>Demo activity</small></div></div>`].join("");
+ $("chart").innerHTML=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map((d,i)=>`<div class="bar-wrap"><div class="bar" style="height:${[45,68,58,88,74,96,62][i]}%"></div><div class="bar-label">${d}</div></div>`).join("");
+}
+function go(page){
+ document.querySelectorAll("main section").forEach(s=>s.classList.add("hidden"));
+ $("page-"+page).classList.remove("hidden");
+ document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+ const labels={dashboard:"Dashboard",members:"Members",attendance:"Attendance",trainers:"Trainers",payments:"Payments",reports:"Reports",notfound:"Page not found"};
+ $("pageTitle").textContent=labels[page]||"Dashboard";$("sidebar").classList.remove("open");history.replaceState(null,"","#"+page);
+}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>go(b.dataset.page)));
+document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.goto)));
+$("menuBtn").onclick=()=>$("sidebar").classList.toggle("open");
+$("today").textContent=new Date().toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric",year:"numeric"});
+let targetPage=location.hash.replace("#","");if(["dashboard","members","attendance","trainers","payments","reports","notfound"].includes(targetPage))go(targetPage);
+function openModal(){$("modalBackdrop").classList.add("show");$("memberName").focus()}
+function closeModal(){$("modalBackdrop").classList.remove("show");$("memberForm").reset()}
+["addMemberBtn","addMemberBtn2"].forEach(id=>$(id).onclick=openModal);
+$("cancelModal").onclick=closeModal;
+$("modalBackdrop").addEventListener("click",e=>{if(e.target===$("modalBackdrop"))closeModal()});
+$("memberForm").onsubmit=e=>{e.preventDefault();members.push({name:$("memberName").value.trim(),plan:$("memberPlan").value,status:$("memberStatus").value,joined:new Date().toLocaleDateString()});closeModal();render();toast("New member added successfully")};
+function markAttendance(){const available=members.filter(m=>m.status==="Active");if(!available.length){toast("No active members available");return}const name=prompt("Enter the member name:\n"+available.map(m=>m.name).join("\n"));if(!name)return;const found=available.find(m=>m.name.toLowerCase()===name.trim().toLowerCase());if(!found){toast("Member not found. Check the name.");return}if(attendance.some(a=>a.name===found.name)){toast("Attendance already marked today");return}attendance.push({name:found.name,time:new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})});render();toast("Attendance marked for "+found.name)}
+["markAttendanceBtn","markAttendanceBtn2"].forEach(id=>$(id).onclick=markAttendance);
+$("viewReportsBtn").onclick=()=>go("reports");$("printReport").onclick=()=>window.print();
+const questTasks=["Take three slow, comfortable breaths","Roll your shoulders gently","Stretch your arms only if comfortable"];
+let questDone=0;
+function drawQuest(){$("questSteps").innerHTML=questTasks.map((t,i)=>`<div class="step ${i<questDone?"done":""}"><span>${i+1}. ${t}</span><strong>${i<questDone?"✓":"○"}</strong></div>`).join("");$("questCount").textContent=questDone+" of 3";$("questProgress").style.width=(questDone/3*100)+"%";$("startQuest").textContent=questDone===3?"Quest completed!":questDone===0?"Start the quest":"Complete next step"}
+$("startQuest").onclick=()=>{if(questDone<3){questDone++;drawQuest();if(questDone===3)toast("Well done! You completed the reset.")}};
+drawQuest();render();
+</script>
+</body>
+</html>
