@@ -8,8 +8,10 @@
 :root{--pink:#ef3963;--pink-dark:#d92d56;--pink-soft:#fff0f4;--ink:#24242a;--muted:#777780;--line:#ececf0;--bg:#f7f7f9;--green:#2f8b77;--shadow:0 8px 28px rgba(30,25,35,.07)}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg)}
 button,input,select{font:inherit}button{cursor:pointer;border:0}
-.app{min-height:100vh;display:flex}.sidebar{width:245px;background:#fff;border-right:1px solid var(--line);padding:25px 17px;position:fixed;inset:0 auto 0 0;display:flex;flex-direction:column;z-index:5}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;margin:0 8px 34px}.brand-mark{width:34px;height:34px;border-radius:11px;background:var(--pink);color:white;display:grid;place-items:center;font-weight:900}
+.auth-screen{min-height:100vh;display:grid;grid-template-columns:minmax(340px,46%) 1fr;background:#fff}.auth-panel{display:flex;align-items:center;justify-content:center;padding:40px;position:relative}.auth-form-wrap{width:min(420px,100%)}.auth-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;margin-bottom:52px;color:var(--ink)}.auth-heading{font-size:34px;letter-spacing:-1.2px;margin:0 0 9px}.auth-copy{color:var(--muted);line-height:1.55;font-size:14px;margin:0 0 28px}.auth-card{border:1px solid var(--line);border-radius:18px;padding:24px;background:#fff;box-shadow:var(--shadow)}.auth-card .field{margin:0 0 17px}.auth-card .field input{width:100%;background:#fcfcfd}.password-field{position:relative}.password-field input{padding-right:50px!important}.password-toggle{position:absolute;right:7px;bottom:7px;color:#6c6c75;background:transparent;border-radius:7px;padding:5px 8px;font-size:12px;font-weight:700}.password-toggle:hover{background:var(--pink-soft);color:var(--pink-dark)}.auth-options{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 0 20px;font-size:12px}.remember{display:flex;align-items:center;gap:7px;color:#595963;cursor:pointer}.remember input{accent-color:var(--pink)}.text-button{padding:0;background:transparent;color:var(--pink-dark);font-size:12px;font-weight:700}.text-button:hover{text-decoration:underline}.auth-submit{width:100%;padding:12px}.auth-message{min-height:20px;color:#c42c4d;font-size:12px;margin:12px 0 0;line-height:1.4}.auth-message.success{color:var(--green)}.auth-foot{font-size:11px;color:#878791;line-height:1.55;margin:20px 2px 0}.auth-art{background:linear-gradient(145deg,#2f1420 0%,#641d38 48%,#ef3963 130%);padding:40px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;position:relative;color:#fff}.auth-art:before,.auth-art:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.16);border-radius:50%;width:620px;height:620px;top:-245px;right:-280px}.auth-art:after{width:370px;height:370px;top:auto;right:auto;bottom:-250px;left:-135px}.auth-art-content{width:min(520px,100%);position:relative;z-index:1}.auth-kicker{font-size:11px;letter-spacing:1.8px;font-weight:800;opacity:.76}.auth-art h2{font-size:clamp(34px,4vw,57px);line-height:1.03;letter-spacing:-2px;margin:13px 0 17px;max-width:530px}.auth-art p{font-size:15px;line-height:1.6;color:#ffe9ef;max-width:390px;margin:0}.auth-stats{display:flex;gap:11px;margin-top:30px}.auth-stat{min-width:108px;padding:13px;border-radius:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(5px)}.auth-stat strong{font-size:19px;display:block}.auth-stat span{font-size:10px;color:#ffe2ea}.account-button{display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--line);border-radius:999px;padding:8px 11px 8px 8px;color:#4f4f58;font-size:12px;font-weight:700}.account-avatar{width:25px;height:25px;background:var(--pink-soft);color:var(--pink-dark);display:grid;place-items:center;border-radius:50%;font-size:10px}.account-button:hover{border-color:#ffc3d1}.sign-out{padding:0;background:transparent;color:#777780;font-size:12px}.sign-out:hover{color:var(--pink-dark);text-decoration:underline}
+.role-choice{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:0 0 20px}.role-choice legend{position:absolute;clip:rect(0 0 0 0);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}.role-option{position:relative;cursor:pointer}.role-option input{position:absolute;opacity:0;inset:0;cursor:pointer}.role-option span{display:block;height:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;transition:.2s}.role-option strong,.role-option small{display:block}.role-option strong{font-size:12px;margin-bottom:3px}.role-option small{font-size:10px;color:var(--muted);line-height:1.35}.role-option input:checked+span{border-color:var(--pink);background:var(--pink-soft);box-shadow:0 0 0 3px rgba(239,57,99,.09)}.role-option input:focus-visible+span{outline:2px solid var(--pink);outline-offset:2px}.role-label{font-size:12px;font-weight:700;color:#555;margin-bottom:7px}.client-hero{display:flex;align-items:end;justify-content:space-between;gap:20px;min-height:165px;padding:26px;background:linear-gradient(125deg,#3b1624,#a4264c 62%,#f14c71);color:#fff;border-radius:17px;overflow:hidden;position:relative}.client-hero:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(255,255,255,.2);border-radius:50%;right:-80px;top:-175px}.client-hero>*{position:relative;z-index:1}.client-hero h2{font-size:27px;letter-spacing:-.8px;margin:7px 0}.client-hero p{font-size:13px;line-height:1.55;margin:0;color:#ffe7ee;max-width:520px}.client-hero .btn{background:#fff;color:var(--pink-dark);box-shadow:none;white-space:nowrap}.client-hero .btn:hover{background:#fff0f4}.progress-metrics{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px}.progress-metric .stat-value{font-size:27px}.progress-layout{grid-template-columns:1.1fr .9fr;margin-top:18px;align-items:start}.progress-form{display:grid;gap:13px}.progress-form .field{margin:0}.progress-form .field input,.progress-form .field textarea{width:100%;padding:11px 12px;border:1px solid #dddde3;border-radius:9px;outline:none;background:#fff}.progress-form .field textarea{resize:vertical;min-height:75px}.progress-form .field input:focus,.progress-form .field textarea:focus{border-color:var(--pink)}.inline-fields{display:grid;grid-template-columns:1fr 1fr;gap:11px}.progress-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:15px}.progress-heading h2{margin:0;font-size:16px}.progress-heading p{margin:4px 0 0;color:var(--muted);font-size:12px;line-height:1.45}.progress-list{display:grid;gap:10px}.progress-item{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:11px}.progress-item strong{font-size:13px;display:block}.progress-item span{font-size:11px;color:var(--muted);display:block;margin-top:3px}.progress-item .text-button{font-size:11px}.empty-progress{padding:25px 10px;text-align:center;color:var(--muted);font-size:12px}.role-pill{display:inline-flex;align-items:center;gap:5px;border-radius:99px;background:var(--pink-soft);color:var(--pink-dark);padding:4px 8px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.4px}.member-action{padding:6px 8px;font-size:11px}.client-only,.admin-only{display:none}
+.feature-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}.feature-card{display:flex;flex-direction:column;gap:13px}.feature-icon{width:40px;height:40px;border-radius:12px;background:var(--pink-soft);color:var(--pink-dark);display:grid;place-items:center;font-size:18px}.feature-card h2{font-size:15px;margin:0}.feature-card p{font-size:12px;line-height:1.55;color:var(--muted);margin:0}.feature-card .btn{margin-top:auto;align-self:start}.trainer-grid{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}.trainer-card{display:flex;flex-direction:column}.trainer-card .avatar{width:52px;height:52px;font-size:15px}.trainer-card h2{font-size:16px;margin:14px 0 4px}.trainer-card p{margin:0 0 14px}.trainer-meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:17px}.trainer-meta span{font-size:10px;background:#f5f5f7;color:#61616b;border-radius:99px;padding:5px 8px}.trainer-card .btn{margin-top:auto}.booking-layout{grid-template-columns:.9fr 1.1fr;align-items:start}.booking-card .field{margin:0}.booking-card .field select,.booking-card .field input,.booking-card .field textarea{width:100%;background:#fff}.booking-card .field textarea{padding:11px 12px;border:1px solid #dddde3;border-radius:9px;min-height:75px;resize:vertical;outline:none}.booking-card .field textarea:focus{border-color:var(--pink)}.booking-list{display:grid;gap:10px}.booking-item{padding:13px;border:1px solid var(--line);border-radius:11px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}.booking-item strong{display:block;font-size:13px}.booking-item small{display:block;font-size:11px;color:var(--muted);line-height:1.5;margin-top:3px}.profile-grid{grid-template-columns:.92fr 1.08fr;align-items:start}.bmi-result{background:#fff8fa;border:1px solid #ffdce5;border-radius:13px;padding:16px;margin-top:15px}.bmi-result strong{font-size:24px;display:block}.bmi-result p{font-size:12px;color:#705964;line-height:1.5;margin:6px 0 0}.bmi-scale{height:10px;background:linear-gradient(90deg,#6bb9dc 0 18%,#49a878 18% 55%,#f2b55a 55% 72%,#ed6f7e 72%);border-radius:99px;position:relative;margin:19px 0 7px}.bmi-marker{position:absolute;top:-5px;width:4px;height:20px;border-radius:9px;background:#24242a;left:0;transition:.25s}.bmi-labels{display:flex;justify-content:space-between;font-size:9px;color:var(--muted)}.plan-callout{padding:17px;border:1px solid #fde0e8;background:#fff9fb;border-radius:13px;margin-bottom:16px}.plan-callout h2{font-size:17px;margin:0 0 5px}.plan-callout p{font-size:12px;color:#715761;line-height:1.55;margin:0}.plan-columns{grid-template-columns:1fr 1fr;align-items:start}.plan-list{padding:0;margin:0;list-style:none;display:grid;gap:8px}.plan-list li{font-size:12px;line-height:1.5;padding:10px 11px 10px 30px;background:#fafafb;border:1px solid #f0f0f3;border-radius:9px;position:relative}.plan-list li:before{content:"✓";color:var(--green);font-weight:800;position:absolute;left:11px}.health-note{font-size:11px;color:#777780;line-height:1.55;margin:16px 0 0}.membership-grid{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}.membership-card{position:relative;display:flex;flex-direction:column}.membership-card.featured{border-color:#ef3963;box-shadow:0 10px 32px rgba(239,57,99,.14)}.membership-card .save{align-self:start;color:#238168;background:#eaf8f2;border-radius:99px;padding:5px 8px;font-size:10px;font-weight:800;margin-bottom:13px}.membership-card h2{font-size:16px;margin:0}.price{font-size:26px;font-weight:800;letter-spacing:-1px;margin:12px 0 5px}.price span{font-size:11px;letter-spacing:0;color:var(--muted);font-weight:600}.membership-card p{font-size:11px;color:var(--muted);line-height:1.5;margin:0 0 17px}.membership-card .btn{margin-top:auto;width:100%}.attendance-capture{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end;margin-bottom:17px}.attendance-capture .field{margin:0}.attendance-capture .field select{width:100%;background:#fff}.attendance-capture .btn{white-space:nowrap}
+.app{min-height:100vh;display:flex}.sidebar{width:245px;background:#fff;border-right:1px solid var(--line);padding:25px 17px;position:fixed;inset:0 auto 0 0;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;margin:0 8px 34px}.brand-mark{width:34px;height:34px;border-radius:11px;background:var(--pink);color:white;display:grid;place-items:center;font-weight:900}
 .nav{display:grid;gap:7px}.nav button{background:transparent;text-align:left;color:#666672;padding:12px 13px;border-radius:10px;font-size:14px;display:flex;gap:12px;align-items:center}.nav button:hover,.nav button.active{background:var(--pink-soft);color:var(--pink-dark);font-weight:700}.nav .ico{width:19px;text-align:center;font-size:17px}.side-bottom{margin-top:auto}.side-note{background:#fff6f8;border:1px solid #ffe0e8;border-radius:13px;padding:14px;font-size:12px;color:#8b6570;line-height:1.5}
 .main{margin-left:245px;width:calc(100% - 245px);padding:28px 34px 40px;max-width:1600px}.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:27px}.eyebrow{color:var(--pink);font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.page-title{font-size:27px;font-weight:800;margin:5px 0 0}.top-actions{display:flex;align-items:center;gap:12px}.date-pill,.admin-pill{background:white;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-size:12px;color:#656570}.admin-dot{display:inline-block;width:8px;height:8px;background:#42b68b;border-radius:50%;margin-right:7px}
 .btn{background:var(--pink);color:white;padding:11px 16px;border-radius:9px;font-weight:700;font-size:13px;box-shadow:0 5px 12px rgba(239,57,99,.15)}.btn:hover{background:var(--pink-dark)}.btn.secondary{background:white;color:var(--ink);border:1px solid var(--line);box-shadow:none}.btn.small{padding:8px 12px;font-size:12px}
@@ -22,29 +24,87 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
 .mobile-menu{display:none;background:white;border:1px solid var(--line);border-radius:9px;padding:8px 11px}
 .notfound{min-height:72vh;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.notfound h1{font-size:38px;line-height:1.05;margin:12px 0}.quest{background:white;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:var(--shadow);max-width:440px}.quest-icon{width:40px;height:40px;background:var(--pink-soft);color:var(--pink);display:grid;place-items:center;border-radius:12px}.progress{height:7px;background:#f0f0f2;border-radius:9px;overflow:hidden;margin:12px 0 20px}.progress span{display:block;height:100%;width:0;background:var(--pink);transition:.25s}.steps{display:grid;gap:10px;margin:17px 0}.step{padding:11px;border:1px solid var(--line);border-radius:10px;font-size:13px;display:flex;justify-content:space-between;align-items:center}.step.done{background:#f0faf6;border-color:#cceadd;color:#27785e}.hidden{display:none!important}
 .toast{position:fixed;right:22px;bottom:22px;background:#25252b;color:white;padding:13px 17px;border-radius:10px;font-size:13px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s;z-index:30}.toast.show{opacity:1;transform:translateY(0)}
-@media(max-width:1000px){.stats{grid-template-columns:repeat(2,1fr)}.content-grid{grid-template-columns:1fr}.main{padding:24px}.page-grid{grid-template-columns:1fr}}
-@media(max-width:700px){.sidebar{transform:translateX(-100%);transition:.25s}.sidebar.open{transform:translateX(0)}.main{margin:0;width:100%;padding:18px 15px 30px}.mobile-menu{display:block}.topbar{gap:10px}.topbar-left{display:flex;gap:10px;align-items:center}.page-title{font-size:22px}.date-pill{display:none}.stats{gap:10px}.card{padding:14px}.stat-value{font-size:25px}.quick{flex-wrap:wrap}.notfound{grid-template-columns:1fr;padding:25px 0}.notfound h1{font-size:32px}.table-card{overflow-x:auto}.table{min-width:550px}}
+@media(max-width:1000px){.stats{grid-template-columns:repeat(2,1fr)}.content-grid,.progress-layout,.booking-layout,.profile-grid{grid-template-columns:1fr}.feature-grid,.trainer-grid{grid-template-columns:repeat(2,1fr)}.membership-grid{grid-template-columns:repeat(2,1fr)}.main{padding:24px}.page-grid{grid-template-columns:1fr}}
+@media(max-width:780px){.auth-screen{grid-template-columns:1fr}.auth-panel{padding:27px 20px 32px}.auth-brand{margin-bottom:38px}.auth-heading{font-size:30px}.auth-art{min-height:285px;padding:31px 24px;align-items:flex-start}.auth-art h2{font-size:36px}.auth-stats{margin-top:22px}.auth-stat{min-width:0;flex:1}.auth-art:before{width:450px;height:450px;top:-230px;right:-245px}}
+@media(max-width:700px){.sidebar{transform:translateX(-100%);transition:.25s}.sidebar.open{transform:translateX(0)}.main{margin:0;width:100%;padding:18px 15px 30px}.mobile-menu{display:block}.topbar{gap:10px}.topbar-left{display:flex;gap:10px;align-items:center}.page-title{font-size:22px}.date-pill{display:none}.stats,.progress-metrics{gap:10px}.card{padding:14px}.stat-value{font-size:25px}.quick{flex-wrap:wrap}.notfound{grid-template-columns:1fr;padding:25px 0}.notfound h1{font-size:32px}.table-card{overflow-x:auto}.table{min-width:550px}.account-button span:last-child{display:none}.account-button{padding:7px}.sign-out{font-size:11px}.client-hero{padding:20px;display:block}.client-hero h2{font-size:23px}.client-hero .btn{margin-top:17px}.inline-fields,.feature-grid,.trainer-grid,.plan-columns,.membership-grid{grid-template-columns:1fr}.attendance-capture{grid-template-columns:1fr}.attendance-capture .btn{width:100%}}
+
+/* Restored classic FitZone visual palette. */
+.auth-screen{background:#fff}.auth-panel{background:transparent}.auth-card{border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.auth-heading,.auth-art h2,.client-hero h2,.page-title{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;letter-spacing:normal}.auth-heading{font-size:34px;line-height:normal}.auth-brand,.brand{letter-spacing:normal}.brand-mark{width:34px;height:34px;border-radius:11px;background:var(--pink);font-size:inherit;letter-spacing:normal;transform:none}.auth-art{background:linear-gradient(145deg,#2f1420 0%,#641d38 48%,#ef3963 130%);align-items:flex-end}.auth-art:before{width:620px;height:620px;top:-245px;right:-280px;border-color:rgba(255,255,255,.16)}.auth-art:after{width:370px;height:370px;bottom:-250px;left:-135px;border-color:rgba(255,255,255,.16)}.auth-art h2{font-size:clamp(34px,4vw,57px);line-height:1.03;letter-spacing:-2px;max-width:530px}.auth-art p{color:#ffe9ef}.auth-kicker{color:inherit;opacity:.76}.auth-stat{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.12);border-radius:12px}.auth-stat strong{color:#fff}.auth-stat span{color:#ffe2ea}.auth-foot{max-width:none}.role-option input:checked+span{border-color:var(--pink);background:var(--pink-soft);box-shadow:0 0 0 3px rgba(239,57,99,.09)}.btn{border-radius:9px;box-shadow:0 5px 12px rgba(239,57,99,.15);letter-spacing:normal}.btn:hover{transform:none;box-shadow:0 5px 12px rgba(239,57,99,.15)}.btn.secondary{background:#fff;border-color:var(--line);box-shadow:none}.btn.secondary:hover{background:#fff;box-shadow:none}.sidebar{width:245px;background:#fff;border-right:1px solid var(--line);padding:25px 17px}.main{margin-left:245px;width:calc(100% - 245px);max-width:1600px}.nav{gap:7px}.nav button{border-radius:10px;padding:12px 13px}.nav button:hover,.nav button.active{background:var(--pink-soft);color:var(--pink-dark)}.side-note{background:#fff6f8;border-color:#ffe0e8;border-radius:13px;color:#8b6570}.page-title{font-size:27px;letter-spacing:normal}.eyebrow{color:var(--pink);letter-spacing:1.5px}.date-pill,.account-button{background:#fff;border-color:var(--line)}.account-avatar{background:var(--pink-soft);color:var(--pink-dark)}.role-pill{background:var(--pink-soft);color:var(--pink-dark)}.card,.panel{border-radius:16px;border-color:var(--line);box-shadow:var(--shadow)}.card{background:#fff}.stat-icon,.feature-icon{background:var(--pink-soft);color:var(--pink);border-radius:11px}.stat-value{color:var(--ink)}.stat-foot{color:var(--green)}.quick{margin:20px 0}.chart{border-bottom-color:var(--line)}.bar{background:linear-gradient(180deg,#ff7292,var(--pink));border-radius:7px 7px 2px 2px}.avatar{background:#ffe7ee;color:#c82f55}.tag{background:#eaf8f2;color:#25815f}.tag.pending{background:#fff4df;color:#a56b12}.tag.inactive{background:#f1f1f3;color:#777}.table th{color:var(--muted)}.table td{border-bottom-color:#f1f1f3}.client-hero{background:linear-gradient(125deg,#3b1624,#a4264c 62%,#f14c71);border-radius:17px;min-height:165px}.client-hero:after{border-color:rgba(255,255,255,.2)}.client-hero .eyebrow{color:#ffd4df!important}.client-hero h2{font-size:27px;letter-spacing:-.8px}.client-hero .btn{background:#fff;color:var(--pink-dark);box-shadow:none}.client-hero .btn:hover{background:#fff0f4}.feature-card{border-top:0}.progress-item,.booking-item{border-radius:11px;background:transparent}.plan-callout{background:#fff9fb;border-color:#fde0e8;border-radius:13px}.plan-callout p{color:#715761}.plan-list li{background:#fafafb;border-color:#f0f0f3;border-radius:9px}.bmi-result{background:#fff8fa;border-color:#ffdce5;border-radius:13px}.membership-card{background:#fff}.membership-card.featured{border:1px solid var(--pink);box-shadow:0 10px 32px rgba(239,57,99,.14)}.membership-card .save{background:#eaf8f2;color:#238168}.membership-card:nth-child(n){border-top:1px solid var(--line)}.modal{border-radius:17px}.toast{background:#25252b;border-radius:10px}.progress-form .field input,.progress-form .field textarea,.field input,.field select{border-radius:9px}.mobile-menu{border-radius:9px}
 </style>
 </head>
 <body>
-<div class="app">
+<section class="auth-screen" id="loginScreen" aria-labelledby="loginTitle">
+  <div class="auth-panel">
+    <div class="auth-form-wrap">
+      <div class="auth-brand"><span class="brand-mark">F</span> FitZone</div>
+      <h1 class="auth-heading" id="loginTitle">Welcome back</h1>
+      <p class="auth-copy" id="loginCopy">Sign in to manage your gym, members, and daily progress in one place.</p>
+      <div class="auth-card">
+        <form id="loginForm" novalidate>
+          <div class="role-label">Choose your portal</div>
+          <fieldset class="role-choice">
+            <legend>Choose the account type</legend>
+            <label class="role-option"><input type="radio" name="loginRole" value="admin" checked><span><strong>Admin portal</strong><small>Manage members and gym activity</small></span></label>
+            <label class="role-option"><input type="radio" name="loginRole" value="client"><span><strong>Client portal</strong><small>Track your personal progress</small></span></label>
+          </fieldset>
+          <div class="field">
+            <label for="loginEmail">Email address</label>
+            <input id="loginEmail" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <div class="password-field">
+              <input id="loginPassword" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="6" required>
+              <button class="password-toggle" id="passwordToggle" type="button" aria-label="Show password" aria-pressed="false">Show</button>
+            </div>
+          </div>
+          <div class="auth-options">
+            <label class="remember"><input id="rememberLogin" type="checkbox"> Remember me</label>
+            <button class="text-button" id="forgotPassword" type="button">Forgot password?</button>
+          </div>
+          <button class="btn auth-submit" id="loginSubmit" type="submit">Sign in as Admin</button>
+          <p class="auth-message" id="loginMessage" role="alert" aria-live="polite"></p>
+        </form>
+      </div>
+      <p class="auth-foot">Demo sign-in only: this static site keeps session details in this browser and never sends or stores your password.</p>
+    </div>
+  </div>
+  <aside class="auth-art" aria-label="FitZone summary">
+    <div class="auth-art-content">
+      <div class="auth-kicker">FITZONEE · MEMBER & TRAINER PORTAL</div>
+      <h2>Lead your gym with more energy.</h2>
+      <p>Keep your team, members, attendance, and momentum moving in the same direction.</p>
+      <div class="auth-stats">
+        <div class="auth-stat"><strong>6</strong><span>Members tracked</span></div>
+        <div class="auth-stat"><strong>3</strong><span>Expert trainers</span></div>
+        <div class="auth-stat"><strong>7 days</strong><span>Attendance view</span></div>
+      </div>
+    </div>
+  </aside>
+</section>
+<div class="app hidden" id="appShell" aria-hidden="true">
 <aside class="sidebar" id="sidebar">
   <div class="brand"><span class="brand-mark">F</span> FitZone</div>
   <nav class="nav" id="nav">
-    <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
-    <button data-page="members"><span class="ico">♙</span>Members</button>
-    <button data-page="attendance"><span class="ico">✓</span>Attendance</button>
-    <button data-page="trainers"><span class="ico">♧</span>Trainers</button>
-    <button data-page="payments"><span class="ico">▤</span>Payments</button>
-    <button data-page="reports"><span class="ico">▥</span>Reports</button>
-    <button data-page="notfound"><span class="ico">↗</span>Page not found</button>
+    <button class="active" data-page="dashboard" data-access="admin"><span class="ico">▦</span>Admin Dashboard</button>
+    <button data-page="members" data-access="admin"><span class="ico">♙</span>Members</button>
+    <button data-page="attendance" data-access="admin"><span class="ico">✓</span>Attendance</button>
+    <button data-page="trainers" data-access="admin"><span class="ico">♧</span>Trainers</button>
+    <button data-page="payments" data-access="admin"><span class="ico">▤</span>Payments</button>
+    <button data-page="reports" data-access="admin"><span class="ico">▥</span>Reports</button>
+    <button data-page="notfound" data-access="admin"><span class="ico">↗</span>Page not found</button>
+    <button data-page="client-dashboard" data-access="client"><span class="ico">◔</span>My dashboard</button>
+    <button data-page="progress" data-access="client"><span class="ico">↗</span>My progress</button>
+    <button data-page="client-trainers" data-access="client"><span class="ico">♧</span>Trainers & bookings</button>
+    <button data-page="fitness" data-access="client"><span class="ico">↗</span>Workout schedule</button>
+    <button data-page="membership" data-access="client"><span class="ico">▤</span>Membership</button>
   </nav>
   <div class="side-bottom"><div class="side-note"><strong>Stay consistent.</strong><br>Small steps make a stronger you. Keep moving with FitZone.</div></div>
 </aside>
 <main class="main">
   <header class="topbar">
-    <div class="topbar-left"><button class="mobile-menu" id="menuBtn">☰</button><div><div class="eyebrow">FITNESS MANAGEMENT</div><div class="page-title" id="pageTitle">Dashboard</div></div></div>
-    <div class="top-actions"><span class="date-pill" id="today"></span><span class="admin-pill"><span class="admin-dot"></span>Admin</span></div>
+    <div class="topbar-left"><button class="mobile-menu" id="menuBtn">☰</button><div><div class="eyebrow">FITNESS MANAGEMENT</div><div class="page-title" id="pageTitle">Admin Dashboard</div></div></div>
+    <div class="top-actions"><span class="date-pill" id="today"></span><span class="account-button" title="Signed-in account"><span class="account-avatar" id="accountInitials">AD</span><span id="accountName">Admin</span><span class="role-pill" id="accountRole">Admin</span></span><button class="sign-out" id="signOutBtn" type="button">Sign out</button></div>
   </header>
   <section id="page-dashboard">
     <div class="grid stats">
@@ -60,13 +120,118 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
     </div>
     <div class="card table-card"><div class="section-head"><h2>Recent members</h2><button class="btn secondary small" data-goto="members">View all</button></div><div id="recentTable"></div></div>
   </section>
+  <section id="page-client-dashboard" class="hidden">
+    <div class="client-hero">
+      <div><div class="eyebrow" style="color:#ffd4df">YOUR FITNESS SPACE</div><h2 id="clientWelcome">Keep your momentum going.</h2><p>Use your personal dashboard to build consistent habits and keep a clear view of the progress you make each week.</p></div>
+      <button class="btn" type="button" data-goto="progress">Track progress</button>
+    </div>
+    <div class="grid progress-metrics">
+      <div class="card progress-metric"><div class="stat-label">This week's workouts</div><div class="stat-value" id="clientWorkoutCount">0</div><div class="stat-foot">Personal activity log</div></div>
+      <div class="card progress-metric"><div class="stat-label">Active minutes</div><div class="stat-value" id="clientMinutes">0</div><div class="stat-foot">This week's total</div></div>
+      <div class="card progress-metric"><div class="stat-label">Monthly goal</div><div class="stat-value" id="clientGoal">—</div><div class="stat-foot">Latest check-in</div></div>
+    </div>
+    <div class="grid progress-layout">
+      <div class="card"><div class="progress-heading"><div><h2>Your latest weekly check-in</h2><p>Small, honest updates make it easier to see your rhythm.</p></div><button class="btn secondary small" type="button" data-goto="progress">Update</button></div><div id="clientWeeklySummary" class="empty-progress">No weekly progress logged yet. Add your first check-in to get started.</div></div>
+      <div class="panel"><h2>Build a sustainable routine</h2><p>Pick a pace you can repeat. Record your workouts and active minutes once a week, then use the monthly check-in to notice what is changing over time.</p><span class="tag">Your data stays in this browser</span></div>
+    </div>
+    <div class="grid feature-grid" style="margin-top:18px">
+      <article class="card feature-card"><div class="feature-icon">♧</div><h2>Find your trainer</h2><p>Browse specialities, request a session, and keep your booking requests together.</p><button class="btn secondary small" type="button" data-goto="client-trainers">View trainers</button></article>
+      <article class="card feature-card"><div class="feature-icon">↗</div><h2>Workout schedule</h2><p>Choose a goal and view the fixed weekly routine prepared for that training style.</p><button class="btn secondary small" type="button" data-goto="fitness">View schedule</button></article>
+      <article class="card feature-card"><div class="feature-icon">₹</div><h2>Choose membership</h2><p>Compare INR plans and longer-term savings before choosing a preferred plan.</p><button class="btn secondary small" type="button" data-goto="membership">View membership</button></article>
+    </div>
+  </section>
+  <section id="page-progress" class="hidden">
+    <div class="section-head"><div><h2>My progress</h2><span class="muted">Your private weekly and monthly fitness check-ins</span></div></div>
+    <div class="grid progress-layout">
+      <div class="card">
+        <div class="progress-heading"><div><h2>Weekly check-in</h2><p>Log your activity for one week.</p></div></div>
+        <form class="progress-form" id="weeklyProgressForm">
+          <div class="field"><label for="weeklyWeek">Week of</label><input id="weeklyWeek" type="week" required></div>
+          <div class="inline-fields">
+            <div class="field"><label for="weeklyWorkouts">Workouts completed</label><input id="weeklyWorkouts" type="number" min="0" max="21" placeholder="e.g. 4" required></div>
+            <div class="field"><label for="weeklyMinutes">Active minutes</label><input id="weeklyMinutes" type="number" min="0" max="5000" placeholder="e.g. 180" required></div>
+          </div>
+          <div class="field"><label for="weeklyNote">A note for yourself <span class="muted">(optional)</span></label><textarea id="weeklyNote" maxlength="180" placeholder="What went well this week?"></textarea></div>
+          <button class="btn" type="submit">Save weekly check-in</button>
+        </form>
+      </div>
+      <div class="card">
+        <div class="progress-heading"><div><h2>Monthly check-in</h2><p>Capture the bigger picture once a month.</p></div></div>
+        <form class="progress-form" id="monthlyProgressForm">
+          <div class="field"><label for="monthlyMonth">Month</label><input id="monthlyMonth" type="month" required></div>
+          <div class="inline-fields">
+            <div class="field"><label for="monthlyGoal">Goal completion (%)</label><input id="monthlyGoal" type="number" min="0" max="100" placeholder="e.g. 75" required></div>
+            <div class="field"><label for="monthlyWeight">Weight <span class="muted">(optional)</span></label><input id="monthlyWeight" type="number" min="1" max="500" step="0.1" placeholder="e.g. 68.5"></div>
+          </div>
+          <div class="field"><label for="monthlyNote">Reflection <span class="muted">(optional)</span></label><textarea id="monthlyNote" maxlength="180" placeholder="One win or focus for next month"></textarea></div>
+          <button class="btn" type="submit">Save monthly check-in</button>
+        </form>
+      </div>
+    </div>
+    <div class="grid progress-layout">
+      <div class="card"><div class="progress-heading"><div><h2>Weekly history</h2><p>Your most recent activity logs.</p></div></div><div class="progress-list" id="weeklyProgressList"></div></div>
+      <div class="card"><div class="progress-heading"><div><h2>Monthly history</h2><p>Your latest monthly snapshots.</p></div></div><div class="progress-list" id="monthlyProgressList"></div></div>
+    </div>
+  </section>
+  <section id="page-client-trainers" class="hidden">
+    <div class="section-head"><div><h2>Trainers & bookings</h2><span class="muted">Find the right coach and request a session that works for you.</span></div></div>
+    <div class="grid trainer-grid" id="clientTrainerCards"></div>
+    <div class="grid booking-layout" style="margin-top:18px">
+      <div class="card booking-card">
+        <div class="progress-heading"><div><h2>Book a trainer</h2><p>Choose a coach, a preferred time, and what you would like to work on.</p></div></div>
+        <form class="progress-form" id="bookingForm">
+          <div class="field"><label for="bookingTrainer">Trainer</label><select id="bookingTrainer" required></select></div>
+          <div class="inline-fields">
+            <div class="field"><label for="bookingDate">Preferred date</label><input id="bookingDate" type="date" required></div>
+            <div class="field"><label for="bookingTime">Preferred time</label><input id="bookingTime" type="time" required></div>
+          </div>
+          <div class="field"><label for="bookingFocus">Session focus</label><textarea id="bookingFocus" maxlength="180" placeholder="For example: first strength session, weight-loss routine, mobility"></textarea></div>
+          <button class="btn" type="submit">Request session</button>
+        </form>
+      </div>
+      <div class="card">
+        <div class="progress-heading"><div><h2>Your booking requests</h2><p>Requests are saved in this browser for this demonstration.</p></div></div>
+        <div class="booking-list" id="bookingList"></div>
+      </div>
+    </div>
+  </section>
+  <section id="page-fitness" class="hidden">
+    <div class="section-head"><div><h2>Workout schedule</h2><span class="muted">Choose one fixed weekly routine based on your current training goal.</span></div></div>
+    <div class="grid progress-layout">
+      <div class="card">
+        <div class="progress-heading"><div><h2>Select your routine</h2><p>These are predefined schedules for the project, not medical or personalised advice.</p></div></div>
+        <form class="progress-form" id="workoutScheduleForm">
+          <div class="field"><label for="scheduleGoal">Training goal</label><select id="scheduleGoal"><option value="general">General fitness</option><option value="strength">Build strength</option><option value="muscle">Build muscle</option><option value="fatloss">Fat-loss routine</option></select></div>
+          <button class="btn" type="submit">Show my weekly schedule</button>
+        </form>
+      </div>
+      <div class="panel"><h2>How to use the schedule</h2><p>Start with a comfortable load, rest when required, and ask a trainer for help with technique. You can change the selected routine whenever your goal changes.</p><span class="tag">Fixed weekly routines</span></div>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <div class="plan-callout"><h2 id="scheduleTitle">General fitness · weekly schedule</h2><p id="scheduleSummary">A simple mix of strength, light cardio, and recovery days.</p></div>
+      <ul class="plan-list" id="schedulePlan"></ul>
+      <p class="health-note">This page is a basic project feature. Stop any exercise that causes pain and work with a qualified trainer when learning new movements.</p>
+    </div>
+  </section>
+  <section id="page-membership" class="hidden">
+    <div class="section-head"><div><h2>Membership</h2><span class="muted">Simple INR plans with better value for a longer commitment.</span></div></div>
+    <div class="grid membership-grid" id="membershipCards"></div>
+    <div class="panel" style="margin-top:18px"><h2 id="selectedMembershipTitle">Choose a plan that fits your routine</h2><p id="selectedMembershipCopy">Select a membership to save your preference locally. Payments are not processed in this demo.</p></div>
+  </section>
   <section id="page-members" class="hidden">
     <div class="section-head"><div><h2>Members</h2><span class="muted">Manage gym member records</span></div><button class="btn" id="addMemberBtn2">＋ Add member</button></div>
     <div class="card"><div id="membersTable"></div></div>
   </section>
   <section id="page-attendance" class="hidden">
-    <div class="section-head"><div><h2>Attendance</h2><span class="muted">Record and review member check-ins</span></div><button class="btn" id="markAttendanceBtn2">＋ Mark attendance</button></div>
-    <div class="page-grid"><div class="panel"><h2>Today's attendance</h2><p>Use the button to record a check-in for a member.</p><div class="stat-value" id="attendanceCountPage">4</div><span class="muted">Check-ins today</span></div><div class="panel"><h2>Attendance tip</h2><p>Mark attendance when a member arrives. The dashboard updates automatically during this session.</p></div></div>
+    <div class="section-head"><div><h2>Attendance</h2><span class="muted">Record and review today’s member check-ins</span></div></div>
+    <div class="card">
+      <form id="attendanceForm" class="attendance-capture">
+        <div class="field"><label for="attendanceMember">Active member</label><select id="attendanceMember" required></select></div>
+        <button class="btn" type="submit">✓ Record check-in</button>
+      </form>
+      <span class="muted">Each active member can be recorded once per day.</span>
+    </div>
+    <div class="page-grid" style="margin-top:17px"><div class="panel"><h2>Today's attendance</h2><p>Use the member selector above to record a check-in without typing a name.</p><div class="stat-value" id="attendanceCountPage">4</div><span class="muted">Check-ins recorded</span></div><div class="panel"><h2>Attendance tip</h2><p>Check-ins are saved in this browser for the project demo and update the dashboard instantly.</p></div></div>
     <div class="card table-card"><div class="section-head"><h2>Attendance log</h2><span class="muted">Recent check-ins</span></div><div id="attendanceTable"></div></div>
   </section>
   <section id="page-trainers" class="hidden">
@@ -75,13 +240,13 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
   </section>
   <section id="page-payments" class="hidden">
     <div class="section-head"><div><h2>Payments</h2><span class="tag pending">Demo mode</span></div></div>
-    <div class="panel"><h2>Payment information</h2><p>Payments are simulated for this website demonstration. No real money is processed or collected.</p><div class="stat-value">$78</div><span class="muted">Sample revenue this month</span></div>
+    <div class="panel"><h2>Membership information</h2><p>Plans are shown in Indian Rupees. Payments remain simulated for this website demonstration; no real money is processed or collected.</p><div class="stat-value">₹11,700</div><span class="muted">Sample revenue this month</span></div>
     <div class="card table-card"><h2>Sample payment records</h2><div id="paymentsTable"></div></div>
   </section>
   <section id="page-reports" class="hidden">
     <div class="section-head"><div><h2>Reports</h2><span class="muted">A snapshot of gym performance</span></div><button class="btn secondary" id="printReport">Print report</button></div>
-    <div class="grid stats"><div class="card"><div class="stat-label">Total members</div><div class="stat-value" id="reportMembers">6</div></div><div class="card"><div class="stat-label">Active memberships</div><div class="stat-value">4</div></div><div class="card"><div class="stat-label">Attendance today</div><div class="stat-value" id="reportAttendance">4</div></div><div class="card"><div class="stat-label">Monthly revenue</div><div class="stat-value">$78</div></div></div>
-    <div class="panel" style="margin-top:18px"><h2>Report summary</h2><p>FitZone's sample dashboard tracks member registrations, active memberships, daily attendance, trainer count and simulated monthly revenue. Use this page to review the current demonstration data.</p></div>
+    <div class="grid stats"><div class="card"><div class="stat-label">Total members</div><div class="stat-value" id="reportMembers">6</div></div><div class="card"><div class="stat-label">Active memberships</div><div class="stat-value">4</div></div><div class="card"><div class="stat-label">Attendance today</div><div class="stat-value" id="reportAttendance">4</div></div><div class="card"><div class="stat-label">Monthly revenue</div><div class="stat-value">₹11,700</div></div></div>
+    <div class="panel" style="margin-top:18px"><h2>Report summary</h2><p>FitZone's sample dashboard tracks member registrations, active memberships, daily attendance, trainer count and simulated monthly revenue in INR. Use this page to review the current demonstration data.</p></div>
   </section>
   <section id="page-notfound" class="hidden">
     <div class="notfound">
@@ -94,59 +259,358 @@ button,input,select{font:inherit}button{cursor:pointer;border:0}
 <div class="modal-backdrop" id="modalBackdrop"><div class="modal"><h2 id="modalTitle">Add member</h2><form id="memberForm"><div class="field"><label for="memberName">Member name</label><input id="memberName" required placeholder="Enter full name"></div><div class="field"><label for="memberPlan">Membership plan</label><select id="memberPlan"><option>Monthly</option><option>Quarterly</option><option>Annual</option></select></div><div class="field"><label for="memberStatus">Status</label><select id="memberStatus"><option>Active</option><option>Pending</option><option>Inactive</option></select></div><div class="modal-actions"><button type="button" class="btn secondary" id="cancelModal">Cancel</button><button class="btn" type="submit">Save member</button></div></form></div></div>
 <div class="toast" id="toast"></div>
 <script>
-const members = [
- {name:"Aarav Sharma",plan:"Annual",status:"Active",joined:"12 Nov 2025"},
- {name:"Meera Kapoor",plan:"Monthly",status:"Active",joined:"18 Nov 2025"},
- {name:"Rohan Verma",plan:"Quarterly",status:"Active",joined:"21 Nov 2025"},
- {name:"Ananya Singh",plan:"Monthly",status:"Pending",joined:"25 Nov 2025"},
- {name:"Kabir Patel",plan:"Annual",status:"Active",joined:"02 Dec 2025"},
- {name:"Ishita Gupta",plan:"Monthly",status:"Inactive",joined:"04 Dec 2025"}
+const memberStorageKey="fitzone.members.v1";
+const defaultMembers = [
+ {id:"m1",name:"Aarav Sharma",plan:"Annual",status:"Active",joined:"12 Nov 2025"},
+ {id:"m2",name:"Meera Kapoor",plan:"Monthly",status:"Active",joined:"18 Nov 2025"},
+ {id:"m3",name:"Rohan Verma",plan:"Quarterly",status:"Active",joined:"21 Nov 2025"},
+ {id:"m4",name:"Ananya Singh",plan:"Monthly",status:"Pending",joined:"25 Nov 2025"},
+ {id:"m5",name:"Kabir Patel",plan:"Annual",status:"Active",joined:"02 Dec 2025"},
+ {id:"m6",name:"Ishita Gupta",plan:"Monthly",status:"Inactive",joined:"04 Dec 2025"}
 ];
-const trainers=[["Riya Malhotra","Yoga & Flexibility","RM"],["Arjun Mehta","Strength Training","AM"],["Sana Khan","Cardio & Fitness","SK"]];
-let attendance=[{name:"Aarav Sharma",time:"08:15 AM"},{name:"Meera Kapoor",time:"08:42 AM"},{name:"Rohan Verma",time:"09:10 AM"},{name:"Kabir Patel",time:"09:35 AM"}];
-const payments=[["Aarav Sharma","Annual membership","$30","Paid"],["Meera Kapoor","Monthly membership","$16","Paid"],["Rohan Verma","Quarterly membership","$22","Paid"],["Ananya Singh","Monthly membership","$10","Pending"]];
+function loadList(key,fallback){
+ try{const saved=JSON.parse(localStorage.getItem(key));return Array.isArray(saved)?saved:JSON.parse(JSON.stringify(fallback))}catch{return JSON.parse(JSON.stringify(fallback))}
+}
+let members=loadList(memberStorageKey,defaultMembers);
+const trainers=[
+ {id:"riya",name:"Riya Malhotra",specialty:"Yoga & Mobility",initials:"RM",experience:"6 years",focus:["Mobility","Recovery","Beginners"]},
+ {id:"arjun",name:"Arjun Mehta",specialty:"Strength & Hypertrophy",initials:"AM",experience:"8 years",focus:["Strength","Bulk","Technique"]},
+ {id:"sana",name:"Sana Khan",specialty:"Cardio & Fat Loss",initials:"SK",experience:"5 years",focus:["Conditioning","Cut","Endurance"]}
+];
+const attendanceStorageKey="fitzone.attendance.v1";
+const defaultAttendance=[
+ {memberId:"m1",name:"Aarav Sharma",time:"08:15 AM"},
+ {memberId:"m2",name:"Meera Kapoor",time:"08:42 AM"},
+ {memberId:"m3",name:"Rohan Verma",time:"09:10 AM"},
+ {memberId:"m5",name:"Kabir Patel",time:"09:35 AM"}
+];
+function todayKey(){return new Date().toISOString().slice(0,10)}
+let attendance=loadList(attendanceStorageKey,defaultAttendance).map(entry=>({...entry,date:entry.date||"history"}));
+const payments=[["Aarav Sharma","Annual membership","₹14,400","Paid"],["Meera Kapoor","Monthly membership","₹1,500","Paid"],["Rohan Verma","6-month membership","₹7,650","Paid"],["Ananya Singh","3-month membership","₹4,050","Pending"]];
+const membershipPlans=[
+ {id:"monthly",name:"Monthly",price:1500,term:"1 month",save:"Flexible monthly access",featured:false},
+ {id:"quarterly",name:"3 months",price:4050,term:"₹1,350 / month",save:"Save ₹450 (10%)",featured:false},
+ {id:"halfyearly",name:"6 months",price:7650,term:"₹1,275 / month",save:"Save ₹1,350 (15%)",featured:true},
+ {id:"annual",name:"1 year",price:14400,term:"₹1,200 / month",save:"Save ₹3,600 (20%)",featured:false}
+];
 const $=id=>document.getElementById(id);
+const sessionKey="fitzone.demo-session.v1";
+let currentSession=null;
+let progressData={weekly:[],monthly:[]};
+function getSession(){
+ const stored=localStorage.getItem(sessionKey)||sessionStorage.getItem(sessionKey);
+ if(!stored)return null;
+ try{
+  const session=JSON.parse(stored);
+  return session&&session.email&&session.name?{...session,role:session.role==="client"?"client":"admin"}:null;
+ }catch{return null}
+}
+function initials(name){
+ return name.split(/\s+/).filter(Boolean).slice(0,2).map(part=>part[0]).join("").toUpperCase()||"FZ";
+}
+function nameFromEmail(email){
+ const base=email.split("@")[0].replace(/[._-]+/g," ").trim();
+ return base.split(/\s+/).map(part=>part.charAt(0).toUpperCase()+part.slice(1)).join(" ")||"FitZone Member";
+}
+function selectedRole(){return document.querySelector('input[name="loginRole"]:checked').value}
+function updateRoleChoice(role){
+ const isAdmin=role==="admin";
+ $("loginCopy").textContent=isAdmin?"Sign in to manage your gym, members, and daily progress in one place.":"Sign in to access your private fitness space and record your progress.";
+ $("loginSubmit").textContent=isAdmin?"Sign in as Admin":"Sign in as Client";
+}
+function setRoleChoice(role){
+ const target=document.querySelector('input[name="loginRole"][value="'+role+'"]');
+ if(target)target.checked=true;
+ updateRoleChoice(role);
+}
+document.querySelectorAll('input[name="loginRole"]').forEach(input=>input.addEventListener("change",()=>updateRoleChoice(input.value)));
+const requestedRole=new URLSearchParams(location.search).get("role");
+if(requestedRole==="admin"||requestedRole==="client")setRoleChoice(requestedRole);
+function saveMembers(){localStorage.setItem(memberStorageKey,JSON.stringify(members))}
+function saveAttendance(){localStorage.setItem(attendanceStorageKey,JSON.stringify(attendance))}
+function progressStorageKey(){return "fitzone.progress.v1."+(currentSession?encodeURIComponent(currentSession.email):"anonymous")}
+function loadProgress(){
+ try{
+  const saved=JSON.parse(localStorage.getItem(progressStorageKey()));
+  if(saved&&Array.isArray(saved.weekly)&&Array.isArray(saved.monthly))return {
+   weekly:saved.weekly,
+   monthly:saved.monthly,
+   bookings:Array.isArray(saved.bookings)?saved.bookings:[],
+   profile:saved.profile&&typeof saved.profile==="object"?saved.profile:{},
+   membership:typeof saved.membership==="string"?saved.membership:""
+  };
+  return {weekly:[],monthly:[],bookings:[],profile:{},membership:""};
+ }catch{return {weekly:[],monthly:[],bookings:[],profile:{},membership:""}}
+}
+function saveProgress(){localStorage.setItem(progressStorageKey(),JSON.stringify(progressData))}
+function readableWeek(week){return week?week.replace("-W"," · Week "):"Week"}
+function readableMonth(month){return month?new Date(month+"-01T12:00:00").toLocaleDateString(undefined,{month:"long",year:"numeric"}):"Month"}
+function escapeHtml(value){return String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]))}
+function renderProgress(){
+ if(!currentSession||currentSession.role!=="client")return;
+ const weekly=[...progressData.weekly].sort((a,b)=>b.week.localeCompare(a.week));
+ const monthly=[...progressData.monthly].sort((a,b)=>b.month.localeCompare(a.month));
+ const latestWeek=weekly[0],latestMonth=monthly[0];
+ $("clientWelcome").textContent="Keep your momentum going, "+currentSession.name.split(" ")[0]+".";
+ $("clientWorkoutCount").textContent=latestWeek?latestWeek.workouts:"0";
+ $("clientMinutes").textContent=latestWeek?latestWeek.minutes:"0";
+ $("clientGoal").textContent=latestMonth?latestMonth.goal+"%":"—";
+ $("clientWeeklySummary").innerHTML=latestWeek?'<div class="progress-item"><div><strong>'+escapeHtml(readableWeek(latestWeek.week))+' · '+escapeHtml(latestWeek.workouts)+' workouts · '+escapeHtml(latestWeek.minutes)+' minutes</strong><span>'+escapeHtml(latestWeek.note||"No note added.")+'</span></div><span class="tag">Latest</span></div>':'No weekly progress logged yet. Add your first check-in to get started.';
+ $("weeklyProgressList").innerHTML=weekly.length?weekly.map(item=>'<div class="progress-item"><div><strong>'+escapeHtml(readableWeek(item.week))+' · '+escapeHtml(item.workouts)+' workouts</strong><span>'+escapeHtml(item.minutes)+' active minutes'+(item.note?" · "+escapeHtml(item.note):"")+'</span></div><button class="text-button" type="button" data-delete-progress="weekly" data-period="'+escapeHtml(item.week)+'">Remove</button></div>').join(""):'<div class="empty-progress">No weekly check-ins yet.</div>';
+ $("monthlyProgressList").innerHTML=monthly.length?monthly.map(item=>'<div class="progress-item"><div><strong>'+escapeHtml(readableMonth(item.month))+' · '+escapeHtml(item.goal)+'% goal</strong><span>'+(item.weight?escapeHtml(item.weight)+" kg":"No weight logged")+(item.note?" · "+escapeHtml(item.note):"")+'</span></div><button class="text-button" type="button" data-delete-progress="monthly" data-period="'+escapeHtml(item.month)+'">Remove</button></div>').join(""):'<div class="empty-progress">No monthly check-ins yet.</div>';
+ document.querySelectorAll("[data-delete-progress]").forEach(button=>button.onclick=()=>{
+  const type=button.dataset.deleteProgress,period=button.dataset.period;
+  progressData[type]=progressData[type].filter(item=>(type==="weekly"?item.week:item.month)!==period);
+  saveProgress();renderProgress();toast("Progress entry removed");
+ });
+}
+const workoutSchedules={
+ general:{title:"General fitness · weekly schedule",summary:"A balanced routine with two strength days, light cardio, and enough recovery.",days:["Monday · Full body: body-weight squats, push-ups, rows, and planks","Tuesday · 20–30 minutes easy walk, cycle, or treadmill","Wednesday · Rest day","Thursday · Lower body: squats, lunges, glute bridges, and calf raises","Friday · Upper body: push-ups, rows, shoulder press, and light core work","Saturday · Mobility or an easy outdoor walk","Sunday · Rest day"]},
+ strength:{title:"Build strength · weekly schedule",summary:"A three-day strength split with recovery between sessions.",days:["Monday · Lower body: squats, Romanian deadlifts, lunges, and calves","Tuesday · Rest or 20-minute walk","Wednesday · Upper body: bench press or push-ups, rows, pulldowns, and shoulder press","Thursday · Rest day","Friday · Full body: squat pattern, press, row, hip hinge, and carries","Saturday · Light mobility work","Sunday · Rest day"]},
+ muscle:{title:"Build muscle · weekly schedule",summary:"A four-day upper/lower split using controlled repetitions and recovery.",days:["Monday · Upper body: chest, back, shoulders, and arms","Tuesday · Lower body: squats, hip hinge, lunges, hamstrings, and calves","Wednesday · Rest day","Thursday · Upper body: repeat with different variations","Friday · Lower body: repeat with different variations","Saturday · Optional easy cardio or mobility","Sunday · Rest day"]},
+ fatloss:{title:"Fat-loss routine · weekly schedule",summary:"Strength work is combined with regular low-impact cardio.",days:["Monday · Full-body strength: squats, presses, rows, hip hinge, and core","Tuesday · 30-minute brisk walk, cycle, or incline treadmill","Wednesday · Upper body strength plus 10 minutes easy cardio","Thursday · Rest or gentle walk","Friday · Lower body strength plus 10 minutes easy cardio","Saturday · 30–40 minutes low-impact cardio","Sunday · Rest day"]}
+};
+function renderWorkoutSchedule(){
+ if(!currentSession||currentSession.role!=="client")return;
+ const selected=progressData.scheduleGoal||"general";
+ const schedule=workoutSchedules[selected]||workoutSchedules.general;
+ $("scheduleGoal").value=selected;
+ $("scheduleTitle").textContent=schedule.title;
+ $("scheduleSummary").textContent=schedule.summary;
+ $("schedulePlan").innerHTML=schedule.days.map(day=>"<li>"+escapeHtml(day)+"</li>").join("");
+}
+function renderClientTrainers(){
+ if(!currentSession||currentSession.role!=="client")return;
+ $("clientTrainerCards").innerHTML=trainers.map(trainer=>'<article class="card trainer-card"><div class="avatar">'+escapeHtml(trainer.initials)+'</div><h2>'+escapeHtml(trainer.name)+'</h2><p>'+escapeHtml(trainer.specialty)+' · '+escapeHtml(trainer.experience)+'</p><div class="trainer-meta">'+trainer.focus.map(item=>"<span>"+escapeHtml(item)+"</span>").join("")+'</div><button class="btn secondary" type="button" data-book-trainer="'+escapeHtml(trainer.id)+'">Book '+escapeHtml(trainer.name.split(" ")[0])+'</button></article>').join("");
+ $("bookingTrainer").innerHTML=trainers.map(trainer=>'<option value="'+escapeHtml(trainer.id)+'">'+escapeHtml(trainer.name)+" — "+escapeHtml(trainer.specialty)+"</option>").join("");
+ const bookings=[...(progressData.bookings||[])].sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+ $("bookingList").innerHTML=bookings.length?bookings.map(booking=>{
+  const trainer=trainers.find(item=>item.id===booking.trainerId);
+  return '<div class="booking-item"><div><strong>'+escapeHtml(trainer?trainer.name:"Trainer")+'</strong><small>'+escapeHtml(booking.date)+" · "+escapeHtml(booking.time)+(booking.focus?" · "+escapeHtml(booking.focus):"")+'</small></div><button class="text-button" type="button" data-cancel-booking="'+escapeHtml(booking.id)+'">Cancel</button></div>';
+ }).join(""):'<div class="empty-progress">No trainer sessions requested yet.</div>';
+ document.querySelectorAll("[data-book-trainer]").forEach(button=>button.onclick=()=>{
+  $("bookingTrainer").value=button.dataset.bookTrainer;go("client-trainers");$("bookingDate").focus();
+ });
+ document.querySelectorAll("[data-cancel-booking]").forEach(button=>button.onclick=()=>{
+  progressData.bookings=progressData.bookings.filter(booking=>booking.id!==button.dataset.cancelBooking);
+  saveProgress();renderClientTrainers();toast("Booking request cancelled");
+ });
+}
+function renderMembership(){
+ if(!currentSession||currentSession.role!=="client")return;
+ const selected=membershipPlans.find(plan=>plan.id===progressData.membership);
+ $("membershipCards").innerHTML=membershipPlans.map(plan=>{
+  const selectedClass=selected?.id===plan.id?" featured":"";
+  return '<article class="card membership-card'+selectedClass+'">'+(plan.featured?'<span class="tag">Best value</span>':"")+'<span class="save">'+escapeHtml(plan.save)+'</span><h2>'+escapeHtml(plan.name)+'</h2><div class="price">₹'+plan.price.toLocaleString("en-IN")+' <span>total</span></div><p>'+escapeHtml(plan.term)+' · Full gym access and member tools included.</p><button class="btn '+(selected?.id===plan.id?"secondary":"")+'" type="button" data-select-plan="'+escapeHtml(plan.id)+'">'+(selected?.id===plan.id?"Selected":"Choose plan")+'</button></article>';
+ }).join("");
+ $("selectedMembershipTitle").textContent=selected?selected.name+" membership selected":"Choose a plan that fits your routine";
+ $("selectedMembershipCopy").textContent=selected?"Your "+selected.name+" plan preference is saved in this browser. Payments are not processed in this demo.":"Select a membership to save your preference locally. Payments are not processed in this demo.";
+ document.querySelectorAll("[data-select-plan]").forEach(button=>button.onclick=()=>{
+  progressData.membership=button.dataset.selectPlan;saveProgress();renderMembership();toast("Membership preference saved");
+ });
+}
+function applyPermissions(){
+ const role=currentSession?.role||"admin";
+ document.body.dataset.role=role;
+ document.querySelectorAll("[data-access]").forEach(item=>item.classList.toggle("hidden",item.dataset.access!==role));
+ $("accountRole").textContent=role==="admin"?"Admin":"Client";
+}
+function showApp(session){
+ currentSession={...session,role:session.role==="client"?"client":"admin"};
+ progressData=loadProgress();
+ applyPermissions();
+ $("loginScreen").classList.add("hidden");
+ $("appShell").classList.remove("hidden");
+ $("appShell").setAttribute("aria-hidden","false");
+ $("accountName").textContent=currentSession.name;
+ $("accountInitials").textContent=initials(currentSession.name);
+ render();renderProgress();renderClientTrainers();renderWorkoutSchedule();renderMembership();
+ document.title="FitZone | Gym Management";
+ go(currentSession.role==="admin"?"dashboard":"client-dashboard");
+}
+function showLogin(message){
+ currentSession=null;
+ progressData={weekly:[],monthly:[],bookings:[],profile:{},membership:""};
+ document.body.removeAttribute("data-role");
+ $("appShell").classList.add("hidden");
+ $("appShell").setAttribute("aria-hidden","true");
+ $("loginScreen").classList.remove("hidden");
+ document.title="Sign in | FitZone";
+ if(message){
+  $("loginMessage").textContent=message;
+  $("loginMessage").classList.add("success");
+ }
+}
+function setLoginMessage(message,type){
+ const target=$("loginMessage");
+ target.textContent=message;
+ target.classList.toggle("success",type==="success");
+}
+$("passwordToggle").onclick=()=>{
+ const input=$("loginPassword");
+ const showing=input.type==="text";
+ input.type=showing?"password":"text";
+ $("passwordToggle").textContent=showing?"Show":"Hide";
+ $("passwordToggle").setAttribute("aria-label",showing?"Show password":"Hide password");
+ $("passwordToggle").setAttribute("aria-pressed",String(!showing));
+};
+$("forgotPassword").onclick=()=>setLoginMessage("Password recovery needs a connected member system. For this demo, use any password with at least 6 characters.","success");
+$("loginForm").onsubmit=e=>{
+ e.preventDefault();
+ const email=$("loginEmail").value.trim().toLowerCase();
+ const password=$("loginPassword").value;
+ if(!email||!$("loginEmail").validity.valid){setLoginMessage("Enter a valid email address to continue.");$("loginEmail").focus();return}
+ if(password.length<6){setLoginMessage("Enter a password with at least 6 characters.");$("loginPassword").focus();return}
+ const session={name:nameFromEmail(email),email,role:selectedRole(),signedInAt:new Date().toISOString()};
+ localStorage.removeItem(sessionKey);sessionStorage.removeItem(sessionKey);
+ ( $("rememberLogin").checked?localStorage:sessionStorage ).setItem(sessionKey,JSON.stringify(session));
+ setLoginMessage("");
+ $("loginForm").reset();
+ showApp(session);
+ toast("Welcome back, "+session.name);
+};
+$("signOutBtn").onclick=()=>{
+ localStorage.removeItem(sessionKey);sessionStorage.removeItem(sessionKey);
+ showLogin("You have been signed out.");
+ setRoleChoice("admin");
+ $("loginPassword").value="";
+ $("loginEmail").focus();
+};
+function currentWeekValue(){
+ const date=new Date();
+ const day=(date.getDay()+6)%7;
+ date.setDate(date.getDate()-day+3);
+ const firstThursday=new Date(date.getFullYear(),0,4);
+ const firstDay=(firstThursday.getDay()+6)%7;
+ firstThursday.setDate(firstThursday.getDate()-firstDay+3);
+ const week=1+Math.round((date-firstThursday)/604800000);
+ return date.getFullYear()+"-W"+String(week).padStart(2,"0");
+}
+function setProgressInputDefaults(){
+ if(!$("weeklyWeek").value)$("weeklyWeek").value=currentWeekValue();
+ if(!$("monthlyMonth").value)$("monthlyMonth").value=new Date().toISOString().slice(0,7);
+}
+$("weeklyProgressForm").onsubmit=e=>{
+ e.preventDefault();
+ if(currentSession?.role!=="client"){toast("Sign in as a client to log personal progress");return}
+ if(!e.currentTarget.checkValidity()){e.currentTarget.reportValidity();return}
+ const item={week:$("weeklyWeek").value,workouts:$("weeklyWorkouts").value,minutes:$("weeklyMinutes").value,note:$("weeklyNote").value.trim()};
+ const index=progressData.weekly.findIndex(entry=>entry.week===item.week);
+ if(index===-1)progressData.weekly.push(item);else progressData.weekly[index]=item;
+ saveProgress();renderProgress();e.currentTarget.reset();setProgressInputDefaults();toast("Weekly check-in saved");
+};
+$("monthlyProgressForm").onsubmit=e=>{
+ e.preventDefault();
+ if(currentSession?.role!=="client"){toast("Sign in as a client to log personal progress");return}
+ if(!e.currentTarget.checkValidity()){e.currentTarget.reportValidity();return}
+ const item={month:$("monthlyMonth").value,goal:$("monthlyGoal").value,weight:$("monthlyWeight").value,note:$("monthlyNote").value.trim()};
+ const index=progressData.monthly.findIndex(entry=>entry.month===item.month);
+ if(index===-1)progressData.monthly.push(item);else progressData.monthly[index]=item;
+ saveProgress();renderProgress();e.currentTarget.reset();setProgressInputDefaults();toast("Monthly check-in saved");
+};
+function setBookingDefaults(){
+ const today=new Date().toISOString().slice(0,10);
+ $("bookingDate").min=today;
+ if(!$("bookingDate").value)$("bookingDate").value=today;
+ if(!$("bookingTime").value)$("bookingTime").value="18:00";
+}
+$("bookingForm").onsubmit=e=>{
+ e.preventDefault();
+ if(currentSession?.role!=="client"){toast("Sign in as a client to request a trainer session");return}
+ if(!e.currentTarget.checkValidity()){e.currentTarget.reportValidity();return}
+ const item={id:"b"+Date.now(),trainerId:$("bookingTrainer").value,date:$("bookingDate").value,time:$("bookingTime").value,focus:$("bookingFocus").value.trim()};
+ progressData.bookings.push(item);saveProgress();e.currentTarget.reset();setBookingDefaults();renderClientTrainers();toast("Trainer session requested");
+};
+$("workoutScheduleForm").onsubmit=e=>{
+ e.preventDefault();
+ if(currentSession?.role!=="client"){toast("Sign in as a client to view a workout schedule");return}
+ progressData.scheduleGoal=$("scheduleGoal").value;
+ saveProgress();renderWorkoutSchedule();toast("Weekly schedule updated");
+};
 function toast(msg){const t=$("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2400)}
 function table(rows,heads){return `<table class="table"><thead><tr>${heads.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((v,i)=>`<td>${v}</td>`).join("")}</tr>`).join("")}</tbody></table>`}
 function statusTag(s){return `<span class="tag ${s.toLowerCase()}">${s}</span>`}
 function render(){
+ const todaysAttendance=attendance.filter(entry=>entry.date===todayKey());
  $("totalMembers").textContent=members.length;$("activeMembers").textContent=members.filter(m=>m.status==="Active").length;$("trainerCount").textContent=trainers.length;
- $("todayAttendance").textContent=attendance.length;$("attendanceCountPage").textContent=attendance.length;$("reportMembers").textContent=members.length;$("reportAttendance").textContent=attendance.length;
- const memberRows=members.map(m=>[`<strong>${m.name}</strong>`,m.plan,statusTag(m.status),m.joined]);
+ $("todayAttendance").textContent=todaysAttendance.length;$("attendanceCountPage").textContent=todaysAttendance.length;$("reportMembers").textContent=members.length;$("reportAttendance").textContent=todaysAttendance.length;
+ const memberRows=members.map(m=>[`<strong>${escapeHtml(m.name)}</strong>`,escapeHtml(m.plan),statusTag(m.status),escapeHtml(m.joined)]);
  $("membersTable").innerHTML=table(memberRows,["Member","Plan","Status","Joined"]);
+ const managedRows=members.map(m=>[
+  "<strong>"+escapeHtml(m.name)+"</strong>",
+  escapeHtml(m.plan),
+  statusTag(m.status),
+  escapeHtml(m.joined),
+  '<button class="btn secondary member-action" type="button" data-remove-member="'+escapeHtml(m.id)+'">Remove</button>'
+ ]);
+ $("membersTable").innerHTML=table(managedRows,["Member","Plan","Status","Joined",""]);
+ document.querySelectorAll("[data-remove-member]").forEach(button=>button.onclick=()=>removeMember(button.dataset.removeMember));
  $("recentTable").innerHTML=table(memberRows.slice(0,4),["Member","Plan","Status","Joined"]);
- $("attendanceTable").innerHTML=table(attendance.map(a=>[a.name,a.time,statusTag("Active")]),["Member","Check-in time","Status"]);
+ const uncheckedMembers=members.filter(member=>member.status==="Active"&&!todaysAttendance.some(entry=>entry.memberId===member.id||entry.name===member.name));
+ $("attendanceMember").innerHTML=uncheckedMembers.length?uncheckedMembers.map(member=>'<option value="'+escapeHtml(member.id)+'">'+escapeHtml(member.name)+'</option>').join(""):'<option value="">All active members have checked in</option>';
+ $("attendanceMember").disabled=!uncheckedMembers.length;
+ $("attendanceForm").querySelector("button").disabled=!uncheckedMembers.length;
+ $("attendanceTable").innerHTML=table(attendance.map(a=>[escapeHtml(a.name),escapeHtml(a.time),escapeHtml(a.date===todayKey()?"Today":a.date==="history"?"Previous session":a.date),statusTag("Active")]),["Member","Check-in time","Date","Status"]);
  $("paymentsTable").innerHTML=table(payments.map(p=>[p[0],p[1],p[2],statusTag(p[3])]),["Member","Description","Amount","Status"]);
- $("trainerCards").innerHTML=trainers.map(t=>`<div class="panel"><div class="avatar" style="width:48px;height:48px;font-size:15px">${t[2]}</div><h2 style="margin-top:15px">${t[0]}</h2><p>${t[1]}</p><span class="tag">Available</span></div>`).join("");
- $("activity").innerHTML=[...attendance.slice(-3).reverse().map(a=>`<div class="activity-item"><div class="avatar">${a.name.split(" ").map(x=>x[0]).slice(0,2).join("")}</div><div><strong>${a.name} checked in</strong><small>Today · ${a.time}</small></div></div>`),`<div class="activity-item"><div class="avatar">F</div><div><strong>FitZone dashboard updated</strong><small>Demo activity</small></div></div>`].join("");
+ $("trainerCards").innerHTML=trainers.map(t=>`<div class="panel"><div class="avatar" style="width:48px;height:48px;font-size:15px">${t.initials}</div><h2 style="margin-top:15px">${t.name}</h2><p>${t.specialty} · ${t.experience}</p><span class="tag">Available</span></div>`).join("");
+ const activityEntries=todaysAttendance.slice(-3).reverse();
+ $("activity").innerHTML=activityEntries.length
+  ?activityEntries.map(a=>`<div class="activity-item"><div class="avatar">${a.name.split(" ").map(x=>x[0]).slice(0,2).join("")}</div><div><strong>${a.name} checked in</strong><small>Today · ${a.time}</small></div></div>`).join("")
+  :`<div class="empty-progress">No check-ins have been recorded today.</div>`;
  $("chart").innerHTML=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map((d,i)=>`<div class="bar-wrap"><div class="bar" style="height:${[45,68,58,88,74,96,62][i]}%"></div><div class="bar-label">${d}</div></div>`).join("");
 }
+function removeMember(id){
+ if(currentSession?.role!=="admin"){toast("Only administrators can manage members");return}
+ const index=members.findIndex(member=>member.id===id);
+ if(index===-1)return;
+ const member=members[index];
+ if(!window.confirm("Remove "+member.name+" from FitZone?"))return;
+ members.splice(index,1);saveMembers();render();toast(member.name+" removed");
+}
 function go(page){
+ const allowed=currentSession?.role==="client"?["client-dashboard","progress","client-trainers","fitness","membership"]:["dashboard","members","attendance","trainers","payments","reports","notfound"];
+ if(!allowed.includes(page))page=currentSession?.role==="client"?"client-dashboard":"dashboard";
  document.querySelectorAll("main section").forEach(s=>s.classList.add("hidden"));
  $("page-"+page).classList.remove("hidden");
  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
- const labels={dashboard:"Dashboard",members:"Members",attendance:"Attendance",trainers:"Trainers",payments:"Payments",reports:"Reports",notfound:"Page not found"};
+ const labels={dashboard:"Admin Dashboard",members:"Members",attendance:"Attendance",trainers:"Trainers",payments:"Payments",reports:"Reports",notfound:"Page not found","client-dashboard":"My dashboard",progress:"My progress","client-trainers":"Trainers & bookings",fitness:"Fitness plans",membership:"Membership"};
  $("pageTitle").textContent=labels[page]||"Dashboard";$("sidebar").classList.remove("open");history.replaceState(null,"","#"+page);
 }
 document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>go(b.dataset.page)));
 document.querySelectorAll("[data-goto]").forEach(b=>b.addEventListener("click",()=>go(b.dataset.goto)));
 $("menuBtn").onclick=()=>$("sidebar").classList.toggle("open");
 $("today").textContent=new Date().toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric",year:"numeric"});
-let targetPage=location.hash.replace("#","");if(["dashboard","members","attendance","trainers","payments","reports","notfound"].includes(targetPage))go(targetPage);
+let targetPage=location.hash.replace("#","");if(["dashboard","members","attendance","trainers","payments","reports","notfound","client-dashboard","progress","client-trainers","fitness","membership"].includes(targetPage))go(targetPage);
 function openModal(){$("modalBackdrop").classList.add("show");$("memberName").focus()}
 function closeModal(){$("modalBackdrop").classList.remove("show");$("memberForm").reset()}
 ["addMemberBtn","addMemberBtn2"].forEach(id=>$(id).onclick=openModal);
 $("cancelModal").onclick=closeModal;
 $("modalBackdrop").addEventListener("click",e=>{if(e.target===$("modalBackdrop"))closeModal()});
-$("memberForm").onsubmit=e=>{e.preventDefault();members.push({name:$("memberName").value.trim(),plan:$("memberPlan").value,status:$("memberStatus").value,joined:new Date().toLocaleDateString()});closeModal();render();toast("New member added successfully")};
-function markAttendance(){const available=members.filter(m=>m.status==="Active");if(!available.length){toast("No active members available");return}const name=prompt("Enter the member name:\n"+available.map(m=>m.name).join("\n"));if(!name)return;const found=available.find(m=>m.name.toLowerCase()===name.trim().toLowerCase());if(!found){toast("Member not found. Check the name.");return}if(attendance.some(a=>a.name===found.name)){toast("Attendance already marked today");return}attendance.push({name:found.name,time:new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})});render();toast("Attendance marked for "+found.name)}
-["markAttendanceBtn","markAttendanceBtn2"].forEach(id=>$(id).onclick=markAttendance);
+$("memberForm").onsubmit=e=>{e.preventDefault();if(currentSession?.role!=="admin"){toast("Only administrators can add members");return}members.push({id:"m"+Date.now(),name:$("memberName").value.trim(),plan:$("memberPlan").value,status:$("memberStatus").value,joined:new Date().toLocaleDateString()});saveMembers();closeModal();render();toast("New member added successfully")};
+function markAttendance(){
+ if(currentSession?.role!=="admin"){toast("Only administrators can record attendance");return}
+ go("attendance");
+ if(!$("attendanceMember").disabled)$("attendanceMember").focus();
+}
+$("attendanceForm").onsubmit=e=>{
+ e.preventDefault();
+ if(currentSession?.role!=="admin"){toast("Only administrators can record attendance");return}
+ const found=members.find(member=>member.id===$("attendanceMember").value&&member.status==="Active");
+ if(!found){toast("Choose an active member to continue");return}
+ if(attendance.some(entry=>entry.date===todayKey()&&(entry.memberId===found.id||entry.name===found.name))){toast("Attendance already recorded for "+found.name);render();return}
+ attendance.push({memberId:found.id,name:found.name,time:new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"}),date:todayKey()});
+ saveAttendance();render();toast("Attendance recorded for "+found.name);
+};
+$("markAttendanceBtn").onclick=markAttendance;
 $("viewReportsBtn").onclick=()=>go("reports");$("printReport").onclick=()=>window.print();
 const questTasks=["Take three slow, comfortable breaths","Roll your shoulders gently","Stretch your arms only if comfortable"];
 let questDone=0;
 function drawQuest(){$("questSteps").innerHTML=questTasks.map((t,i)=>`<div class="step ${i<questDone?"done":""}"><span>${i+1}. ${t}</span><strong>${i<questDone?"✓":"○"}</strong></div>`).join("");$("questCount").textContent=questDone+" of 3";$("questProgress").style.width=(questDone/3*100)+"%";$("startQuest").textContent=questDone===3?"Quest completed!":questDone===0?"Start the quest":"Complete next step"}
 $("startQuest").onclick=()=>{if(questDone<3){questDone++;drawQuest();if(questDone===3)toast("Well done! You completed the reset.")}};
-drawQuest();render();
+drawQuest();render();setProgressInputDefaults();setBookingDefaults();
+const activeSession=getSession();
+if(activeSession)showApp(activeSession);
+else{$("loginEmail").focus();document.title="Sign in | FitZone";}
 </script>
 </body>
 </html>
